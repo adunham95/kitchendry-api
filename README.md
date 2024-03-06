@@ -45,6 +45,13 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+
+## Running generate new resource
+
+```bash
+$ npx nest generate resource
+```
+
 ## Test
 
 ```bash
