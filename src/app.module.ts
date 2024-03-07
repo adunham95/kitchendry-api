@@ -6,6 +6,9 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { PrismaModule } from './prisma/prisma.module';
 import { AppResolver } from './app.resolver';
 import { UsersModule } from './users/users.module';
+import { RecipesModule } from './recipes/recipes.module';
+import { InstructionsModule } from './instructions/instructions.module';
+import { IngredientsModule } from './ingredients/ingredients.module';
 
 @Module({
   imports: [
@@ -15,6 +18,9 @@ import { UsersModule } from './users/users.module';
     }),
     PrismaModule,
     UsersModule,
+    RecipesModule,
+    InstructionsModule,
+    IngredientsModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
