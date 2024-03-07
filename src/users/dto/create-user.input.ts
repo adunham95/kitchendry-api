@@ -6,7 +6,12 @@ export class CreateUserInput {
   @IsString()
   @IsNotEmpty()
   @Field()
-  name: string;
+  firstName: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @Field()
+  lastName: string;
 
   @IsString()
   @IsNotEmpty()

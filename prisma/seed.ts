@@ -13,10 +13,13 @@ async function main() {
     where: { email: 'adunham95@gmail.com' },
     update: {
       password: passwordUser1,
+      firstName: 'Adrian',
+      lastName: 'Dunham',
     },
     create: {
       email: 'adunham95@gmail.com',
-      name: 'Adrian Dunham  ',
+      firstName: 'Adrian',
+      lastName: 'Dunham',
       password: passwordUser1,
     },
   });

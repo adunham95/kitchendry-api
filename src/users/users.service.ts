@@ -19,23 +19,27 @@ export class UsersService {
     createUserInput.password = hashedPassword;
 
     return this.prisma.user.create({ data: createUserInput });
-    // return '';
   }
 
   findAll() {
-    return `This action returns all users`;
+    return this.prisma.user.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.prisma.user.findUnique({ where: { id } });
   }
 
-  update(id: number, updateUserInput: UpdateUserInput) {
-    console.log(updateUserInput);
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserInput: UpdateUserInput) {
+    if (updateUserInput.password) {
+      updateUserInput.password = await bcrypt.hash(
+        updateUserInput.password,
+        roundsOfHashing,
+      );
+    }
+    return this.prisma.user.update({ where: { id }, data: updateUserInput });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return this.prisma.user.delete({ where: { id } });
   }
 }

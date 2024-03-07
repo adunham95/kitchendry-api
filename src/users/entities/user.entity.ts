@@ -11,7 +11,10 @@ export class UserEntity implements User {
   id: number;
 
   @Field(() => String)
-  name: string;
+  firstName: string;
+
+  @Field(() => String)
+  lastName: string;
 
   @Field(() => String)
   email: string;

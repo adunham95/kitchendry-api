@@ -4,7 +4,8 @@
 
 type UserEntity {
   id: Float!
-  name: String!
+  firstName: String!
+  lastName: String!
   email: String!
   createdAt: DateTime!
   updatedAt: DateTime!
@@ -23,19 +24,20 @@ type Query {
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): UserEntity!
-  updateUser(updateUserInput: UpdateUserInput!): UserEntity!
+  updateUser(updateUserInput: UpdateUserInput!, id: Int!): UserEntity!
   removeUser(id: Int!): UserEntity!
 }
 
 input CreateUserInput {
-  name: String!
+  firstName: String!
+  lastName: String!
   email: String!
   password: String!
 }
 
 input UpdateUserInput {
-  name: String
+  firstName: String
+  lastName: String
   email: String
   password: String
-  id: Int!
 }
