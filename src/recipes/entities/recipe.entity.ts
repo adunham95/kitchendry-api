@@ -1,5 +1,7 @@
 import { ObjectType, Field, GraphQLISODateTime } from '@nestjs/graphql';
 import { Recipe as RecipeORM } from '@prisma/client';
+import { Ingredient } from 'src/ingredients/entities/ingredient.entity';
+import { Instruction } from 'src/instructions/entities/instruction.entity';
 
 @ObjectType()
 export class Recipe implements RecipeORM {
@@ -23,4 +25,10 @@ export class Recipe implements RecipeORM {
 
   @Field(() => GraphQLISODateTime)
   updatedAt: Date;
+
+  @Field(() => [Instruction])
+  instructions?: Instruction[];
+
+  @Field(() => [Ingredient])
+  ingredients?: Ingredient[];
 }

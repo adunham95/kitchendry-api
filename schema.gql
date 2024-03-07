@@ -16,14 +16,14 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
-type Recipe {
+type Ingredient {
   id: Float!
-  userID: Float!
+  recipeID: Float!
+  refID: String!
+  instructionRefID: String!
   name: String!
-  description: String!
-  servings: Float!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  count: Float!
+  type: String!
 }
 
 type Instruction {
@@ -34,14 +34,16 @@ type Instruction {
   order: Float!
 }
 
-type Ingredient {
+type Recipe {
   id: Float!
-  recipeID: Float!
-  refID: String!
-  instructionRefID: String!
+  userID: Float!
   name: String!
-  count: Float!
-  type: String!
+  description: String!
+  servings: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  instructions: [Instruction!]!
+  ingredients: [Ingredient!]!
 }
 
 type Query {
