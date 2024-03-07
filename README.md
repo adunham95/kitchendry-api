@@ -52,6 +52,16 @@ $ npm run start:prod
 $ npx nest generate resource
 ```
 
+## Database
+
+```bash
+# Migrate
+$ npx prisma migrate dev
+
+# Seed Database
+$ npx prisma db seed
+```
+
 ## Test
 
 ```bash
