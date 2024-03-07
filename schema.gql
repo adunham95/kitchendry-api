@@ -86,34 +86,50 @@ input UpdateUserInput {
 }
 
 input CreateRecipeInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  userID: Float!
+  name: String!
+  description: String!
+  servings: Float!
 }
 
 input UpdateRecipeInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  userID: Float
+  name: String
+  description: String
+  servings: Float
   id: Int!
 }
 
 input CreateInstructionInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  recipeID: Float!
+  refID: String!
+  description: String!
+  order: Float!
 }
 
 input UpdateInstructionInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  recipeID: Float
+  refID: String
+  description: String
+  order: Float
   id: Int!
 }
 
 input CreateIngredientInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  recipeID: Float!
+  refID: String!
+  instructionRefID: String!
+  name: String!
+  count: Float!
+  type: String!
 }
 
 input UpdateIngredientInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  recipeID: Float
+  refID: String
+  instructionRefID: String
+  name: String
+  count: Float
+  type: String
   id: Int!
 }
